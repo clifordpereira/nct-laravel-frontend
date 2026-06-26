@@ -12,7 +12,7 @@
   "dependencies": {
     "@nuxt/ui": "^4.9.0",
     "nuxt": "^4.4.8",
-    "nuxt-crud-table": "nuxt-crud-table-0.0.1.tgz",
+    "nuxt-crud-table": "^0.0.3",
     "tailwindcss": "^4.3.1",
     "vue": "^3.5.38",
     "vue-router": "^5.1.0"
