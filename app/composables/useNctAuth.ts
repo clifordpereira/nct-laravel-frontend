@@ -29,9 +29,6 @@ export function useNctAuth() {
       user.value = data.user
       tokenCookie.value = data.token
       
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('nct_token', data.token)
-      }
       return { success: true }
     } catch (error: any) {
       return { success: false, error: error.data?.message || 'Authentication failed' }
@@ -43,7 +40,7 @@ export function useNctAuth() {
     try {
       await $fetch(`${apiBase}/auth/logout`, {
         method: 'POST',
-        headers: crudHeaders(),
+        headers: nctCrudHeaders(),
       })
     } catch {
       // Fall through safely
@@ -51,9 +48,6 @@ export function useNctAuth() {
       token.value = null
       user.value = null
       tokenCookie.value = null
-      if (typeof window !== 'undefined') {
-        localStorage.removeItem('nct_token')
-      }
     }
   }
 
@@ -61,7 +55,7 @@ export function useNctAuth() {
     if (!token.value) return
     try {
       user.value = await $fetch<AuthUser>(`${apiBase}/auth/user`, {
-        headers: crudHeaders(),
+        headers: nctCrudHeaders(),
       })
     } catch {
       logout()
