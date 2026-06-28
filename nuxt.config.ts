@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: 'latest',
   devtools: { enabled: true },
   modules: ['@nuxt/ui', 'nuxt-crud-table'],
   css: ['~/assets/css/main.css']
