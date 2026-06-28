@@ -5,17 +5,17 @@ This repository provides the frontend implementation for the Nuxt-Laravel integr
 > **Prerequisite Note:** This repository handles the UI layer only. To make this application functional, you **must** also set up and run the backend service. If you haven't done so already, please navigate to [nuxt-laravel-backend](https://www.google.com/search?q=https://github.com/your-username/nuxt-laravel-backend) to configure your server API before proceeding.
 
 ---
-## Quick Install
+
+## Installation & Setup
+
+### Quick Install
 ```bash
 nuxi init -t gh:Clifland/nct-laravel-frontend <your-app-name>
-cd <your-app-name>
-bun dev
 ```
----
 
-## Architecture Context
+### Nuxt Configuration
 
-The application is registered with core module wrappers leveraging modern dynamic routing rules.
+Add nuxt-crud-table module in nuxt.config.ts.
 
 ```ts
 // nuxt.config.ts
@@ -27,12 +27,7 @@ export default defineNuxtConfig({
 })
 
 ```
-
----
-
-## Setup & Installation
-
-### 1. Environment Configuration
+### Environment Configuration
 
 Create a `.env` file in the root directory of this project and specify your local Laravel API endpoint:
 
@@ -41,25 +36,8 @@ NUXT_PUBLIC_CRUD_TABLE_API_BASE=http://localhost:8000/api
 
 ```
 
-### 2. Install Dependencies
-
-Ensure you have Node.js and Bun installed on your Ubuntu machine, then execute:
-
-```bash
-bun install
-
-```
-
-### 3. Run the Development Server
-
-Start the client-side server locally:
-
-```bash
-bun run dev
-
-```
-
-The application will default to running on `http://localhost:3000`.
+### Run the App
+Open the app with your IDE and run `bun dev` to start the development server.
 
 ---
 
